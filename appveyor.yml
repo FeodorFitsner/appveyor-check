@@ -1,0 +1,13 @@
+image: Visual Studio 2019
+platform: x64
+
+test_script:
+- ps: |
+    Write-Host "`nExecute directly"
+    .\download.ps1
+- ps: |
+    Write-Host "`nExecute through powershell.exe"
+    Set-Location .
+    powershell.exe .\download.ps1
+
+build: off
