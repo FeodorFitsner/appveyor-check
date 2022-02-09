@@ -5,7 +5,11 @@ test_script:
 - ps: |
     Write-Host "`nExecute directly"
     .\download.ps1
-- pwsh .\download.ps1
+- ps: |
+    $p = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe.config'
+    ((Get-Content -path $p -Raw) -replace '<configuration>', '<configuration><startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.2" /></startup>') | Set-Content -Path $p
+      
+- powershell .\download.ps1
 - ps: |
     Write-Host "`nExecute through powershell.exe"
     Set-Location .
