@@ -1,5 +1,5 @@
 #Write-Host "`nTLS Protocol"
-#[Net.ServicePointManager]::SecurityProtocol
+[Net.ServicePointManager]::SecurityProtocol
 
 Write-Host "`nHost Info"
 Get-Host
