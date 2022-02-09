@@ -5,6 +5,7 @@ test_script:
 - ps: |
     Write-Host "`nExecute directly"
     .\download.ps1
+- powershell.exe .\download.ps1
 - ps: |
     Write-Host "`nExecute through powershell.exe"
     Set-Location .
