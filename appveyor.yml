@@ -7,6 +7,8 @@ test_script:
     .\download.ps1
 - ps: |
     $p = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe.config'
+    takeown /F "$p"
+    icacls "$p" /grant administrators:F
     ((Get-Content -path $p -Raw) -replace '<configuration>', '<configuration><startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.2" /></startup>') | Set-Content -Path $p
       
 - powershell .\download.ps1
