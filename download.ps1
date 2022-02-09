@@ -1,4 +1,5 @@
 #Write-Host "`nTLS Protocol"
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 [Net.ServicePointManager]::SecurityProtocol
 
 Write-Host "`nHost Info"
