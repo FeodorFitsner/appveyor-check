@@ -9,6 +9,6 @@ test_script:
 - ps: |
     Write-Host "`nExecute through powershell.exe"
     Set-Location .
-    powershell.exe .\download.ps1
+    pwsh .\download.ps1
 
 build: off
