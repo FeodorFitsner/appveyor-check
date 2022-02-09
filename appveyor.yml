@@ -10,7 +10,8 @@ test_script:
     takeown /F "$p"
     icacls "$p" /grant administrators:F
     ((Get-Content -path $p -Raw) -replace '<configuration>', '<configuration><startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.2" /></startup>') | Set-Content -Path $p
-      
+
+- where powershell      
 - powershell .\download.ps1
 - ps: |
     Write-Host "`nExecute through powershell.exe"
